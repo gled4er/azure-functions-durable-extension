@@ -1,5 +1,5 @@
 // Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the MIT License. See License.txt in the project root for license information.
+// Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
 using System.Net.Http;
@@ -16,7 +16,7 @@ namespace VSSample
         [FunctionName("HttpStart")]
         public static async Task<HttpResponseMessage> Run(
             [HttpTrigger(AuthorizationLevel.Function, methods: "post", Route = "orchestrators/{functionName}")] HttpRequestMessage req,
-            [OrchestrationClient] DurableOrchestrationClient starter,
+            [OrchestrationClient] DurableOrchestrationClientBase starter,
             string functionName,
             TraceWriter log)
         {
